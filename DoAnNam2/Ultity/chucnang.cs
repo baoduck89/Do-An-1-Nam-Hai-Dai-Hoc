@@ -30,7 +30,7 @@ namespace DoAnNam2.Ultity
             }
             public void them()
             {
-                Console.WriteLine("_________MỜI BẠN NHẬP THÔNG TIN _________");
+                Console.WriteLine("_________MOI BAN NHAP THONG TIN_________");
                 Console.Write("Nhap ma nhan vien: ");
                 int manv = int.Parse(Console.ReadLine());
                 Console.Write("Nhap ten nhanvien: ");

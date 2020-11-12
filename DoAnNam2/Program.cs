@@ -7,7 +7,7 @@ namespace DoAnNam2
         static void Main(string[] args)
         {
             chucnang nv = new chucnang();
-            nv.menu;
+            nv.menu();
         }
     }
 }
