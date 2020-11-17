@@ -2,88 +2,80 @@
 using System.Collections.Generic;
 using System.Text;
 using DoAnNam2.Bussiness.Interface;
+using DoAnNam2.Data;
+using DoAnNam2.Entities;
 
 namespace DoAnNam2.Bussiness
 {
     public class NhanvienBLL : INhanvienBLL
     {
-        private ISanPhamDAL hsDA = new SanPhamDAL();
+        private INhanvienDAL nvB = new SanPhamDAL();
         //Thực thi các yêu cầu
-        public List<SanPham> GetAllSanPham()
+        public List<Nhanvien> GetAllNhanvien()
         {
-            return hsDA.GetAllSanPham();
+            return nvB.GetAllNhanvien();
         }
-        public void ThemSanPham(SanPham sp)
+        public void ThemSanPham(Nhanvien nv)
         {
-            if (!string.IsNullOrEmpty(sp.TenSanPham))
+            if (!string.IsNullOrEmpty(nv.Tennv))
             {
                 //Tiến hành chuẩn hóa dữ liệu nếu cần
-                hsDA.ThemSanPham(sp);
+                nvB.ThemNhanvien(nv);
             }
             else
                 throw new Exception("Du lieu sai");
         }
 
-        public void XoaSanPham(string masanpham)
+        public void XoaSanPham(int manhanvien)
         {
             int i;
-            List<SanPham> list = GetAllSanPham();
+            List<Nhanvien> list = GetAllNhanvien();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].MaSanPham == masanpham) break;
+                if (list[i].Manv == manhanvien) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                hsDA.Update(list);
+                nvB.Update(list);
             }
             else
                 throw new Exception("Khong ton tai ma nay");
         }
-        public void SuaSanPham(SanPham sp)
+        public void SuaNhanVien(Nhanvien nv)
         {
             int i;
-            List<SanPham> list = GetAllSanPham();
+            List<Nhanvien> list = GetAllNhanvien();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].MaSanPham == sp.MaSanPham) break;
+                if (list[i].Manv == nv.Manv) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                list.Add(sp);
-                hsDA.Update(list);
+                list.Add(nv);
+                nvB.Update(list);
             }
             else
                 throw new Exception("Khong ton tai hs nay");
         }
-        public List<SanPham> TimSanPham(SanPham sp)
+        public List<Nhanvien> TimNhanvien(Nhanvien nv)
         {
-            List<SanPham> list = GetAllSanPham();
-            List<SanPham> kq = new List<SanPham>();
-            if (string.IsNullOrEmpty(sp.MaSanPham) &&
-                string.IsNullOrEmpty(sp.TenSanPham) &&
-                sp.DonGia == 0)
+            List<Nhanvien> list = GetAllNhanvien();
+            List<Nhanvien> kq = new List<Nhanvien>();
+            if (
+                string.IsNullOrEmpty(nv.Tennv))
+
             {
                 kq = list;
             }
-            //Tim theo ten sp
-            if (!string.IsNullOrEmpty(sp.TenSanPham))
+            //Tim theo ten nv
+            if (!string.IsNullOrEmpty(nv.Tennv))
             {
                 for (int i = 0; i < list.Count; ++i)
-                    if (list[i].TenSanPham.IndexOf(sp.TenSanPham) >= 0)
+                    if (list[i].Tennv.IndexOf(nv.Tennv) >= 0)
                     {
-                        kq.Add(new SanPham(list[i]));
+                        kq.Add(new Nhanvien(list[i]));
                     }
             }
 
-            //Tim theo gia
-            else if (sp.DonGia > 0)
-            {
-                for (int i = 0; i < list.Count; ++i)
-                    if (list[i].DonGia == sp.DonGia)
-                    {
-                        kq.Add(new SanPham(list[i]));
-                    }
-            }
-            else kq = null;
-            return kq;
+
         }
     }
 }

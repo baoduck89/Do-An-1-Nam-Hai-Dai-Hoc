@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using DoAnNam2.Entities;
+
 namespace DoAnNam2.Bussiness.Interface
 {
-    class INhanvienBLL
+
+    public interface ISanPhamBLL
     {
-        public interface INhanvienBLL
-        {
-            List<Nhanvien> GetAllSanPham();
-            void ThemSanPham(Nhanvien nv);
-            void XoaSanPham(string manv);
-            void SuaSanPham(Nhanvien nv);
-            List<Nhanvien> TimSanPham(Nhanvien nv);
-        }
+        List<Nhanvien> GetAllNhanvien();
+        void ThemSanPham(Nhanvien nv);
+        void XoaSanPham(string manv);
+        void SuaSanPham(Nhanvien nv);
+        List<Nhanvien> TimSanPham(Nhanvien nv);
     }
 }
