@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DoAnNam2.Bussiness.Interface;
 using DoAnNam2.Data;
 using DoAnNam2.Entities;
 
-namespace DoAnNam2.Bussiness
+namespace DoAnNam2.BussinessLayer
 {
     public class NhanvienBLL : INhanvienBLL
     {
-        private INhanvienDAL nvB = new SanPhamDAL();
+        private INhanvienDAL nvB = new NhanVienDAL();
         //Thực thi các yêu cầu
         public List<Nhanvien> GetAllNhanvien()
         {
             return nvB.GetAllNhanvien();
         }
-        public void ThemSanPham(Nhanvien nv)
+        public void ThemNhanVien(Nhanvien nv)
         {
             if (!string.IsNullOrEmpty(nv.Tennv))
             {
@@ -26,7 +25,7 @@ namespace DoAnNam2.Bussiness
                 throw new Exception("Du lieu sai");
         }
 
-        public void XoaSanPham(int manhanvien)
+        public void XoaNhanVien(string manhanvien)
         {
             int i;
             List<Nhanvien> list = GetAllNhanvien();
@@ -55,11 +54,11 @@ namespace DoAnNam2.Bussiness
             else
                 throw new Exception("Khong ton tai hs nay");
         }
-        public List<Nhanvien> TimNhanvien(Nhanvien nv)
+        public List<Nhanvien> TimNhanVien(Nhanvien nv)
         {
             List<Nhanvien> list = GetAllNhanvien();
             List<Nhanvien> kq = new List<Nhanvien>();
-            if (
+            if (string.IsNullOrEmpty(nv.Manv) &&
                 string.IsNullOrEmpty(nv.Tennv))
 
             {
@@ -74,7 +73,6 @@ namespace DoAnNam2.Bussiness
                         kq.Add(new Nhanvien(list[i]));
                     }
             }
-
 
         }
     }

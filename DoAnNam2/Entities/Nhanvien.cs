@@ -4,13 +4,23 @@ using System.Text;
 
 namespace DoAnNam2.Entities
 {
-    class Nhanvien
+     public class Nhanvien
     {
-        int manv;
+        string manv;
         string tennv, gioitinh;
         DateTime ngaysinh, ngayvaolv;
+        private Nhanvien nhanvien;
 
-        public Nhanvien(int manv, string tennv, string gioitinh, DateTime ngaysinh, DateTime ngayvaolv)
+        public Nhanvien()
+        {
+        }
+
+        public Nhanvien(Nhanvien nhanvien)
+        {
+            this.nhanvien = nhanvien;
+        }
+
+        public Nhanvien(string manv, string tennv, string gioitinh, DateTime ngaysinh, DateTime ngayvaolv)
         {
             this.manv = Manv;
             this.tennv = Tennv;
@@ -19,7 +29,7 @@ namespace DoAnNam2.Entities
             this.ngayvaolv = Ngayvaolv;
         }
 
-        public int Manv { get => manv; set => manv = value; }
+        public string Manv { get => manv; set => manv = value; }
         public string Tennv { get => tennv; set => tennv = value; }
         public string Gioitinh { get => gioitinh; set => gioitinh = value; }
         public DateTime Ngaysinh { get => ngaysinh; set => ngaysinh = value; }

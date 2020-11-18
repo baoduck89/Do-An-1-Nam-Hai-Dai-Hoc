@@ -9,5 +9,10 @@ namespace DoAnNam2
             chucnang nv = new chucnang();
             nv.menu();
         }
+
+        internal static void Menu()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

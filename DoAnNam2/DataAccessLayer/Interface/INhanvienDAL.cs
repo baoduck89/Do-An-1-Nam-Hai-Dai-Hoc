@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DoAnNam2.Data.DTO
+namespace DoAnNam2.DataAccessLayer
 {
 
     public interface INhanvienDAL

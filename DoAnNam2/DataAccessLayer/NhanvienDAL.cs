@@ -5,10 +5,8 @@ using DoAnNam2.Entities;
 using System.IO;
 
 namespace DoAnNam2.Data
-{
-    class NhanvienDAL
-    {
-        class NhanvienDAL : INhanvienDAL
+{   
+         class NhanVienDAL : INhanvienDAL
         {
             //Xác định đường dẫn của tệp dữ liệu SanPham.txt
             private string txtfile = "Data/Nhanvien.txt";
@@ -23,7 +21,7 @@ namespace DoAnNam2.Data
                     if (s != "")
                     {
                         string[] a = s.Split('#');
-                        list.Add(new Nhanvien(int.Parse(a[0]), a[1], a[2], DateTime.Parse(a[3]), DateTime.Parse(a[4])));
+                        list.Add(new Nhanvien(a[0], a[1], a[2], DateTime.Parse(a[3]), DateTime.Parse(a[4])));
                     }
                     s = fread.ReadLine();
                 }
@@ -49,4 +47,4 @@ namespace DoAnNam2.Data
             }
         }
     }
-}
+
