@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DoAnNam2.Data;
 using DoAnNam2.Entities;
+using DoAnNam2.DataAccessLayer;
+
 
 namespace DoAnNam2.BussinessLayer
 {
     public class NhanvienBLL : INhanvienBLL
     {
-        private INhanvienDAL nvB = new NhanVienDAL();
+        private INhanvienDAL nvB = new NhanvienDAL();
         //Thực thi các yêu cầu
         public List<Nhanvien> GetAllNhanvien()
         {
@@ -54,26 +55,36 @@ namespace DoAnNam2.BussinessLayer
             else
                 throw new Exception("Khong ton tai hs nay");
         }
-        public List<Nhanvien> TimNhanVien(Nhanvien nv)
+        //public List<Nhanvien> TimNhanVien(Nhanvien nv)
+        //{
+        //    List<Nhanvien> list = GetAllNhanvien();
+        //    List<Nhanvien> kq = new List<Nhanvien>();
+        //    if (string.IsNullOrEmpty(nv.Manv) &&
+        //        string.IsNullOrEmpty(nv.Tennv))
+
+        //    {
+        //        kq = list;
+        //    }
+        //    //Tim theo ten nv
+        //    if (!string.IsNullOrEmpty(nv.Tennv))
+        //    {
+        //        for (int i = 0; i < list.Count; ++i)
+        //            if (list[i].Tennv.IndexOf(nv.Tennv) >= 0)
+        //            {
+        //                kq.Add(new Nhanvien(list[i]));
+        //            }
+        //    }
+
+        //}
+
+        public List<Nhanvien> GetAllNhanVien()
         {
-            List<Nhanvien> list = GetAllNhanvien();
-            List<Nhanvien> kq = new List<Nhanvien>();
-            if (string.IsNullOrEmpty(nv.Manv) &&
-                string.IsNullOrEmpty(nv.Tennv))
+            throw new NotImplementedException();
+        }
 
-            {
-                kq = list;
-            }
-            //Tim theo ten nv
-            if (!string.IsNullOrEmpty(nv.Tennv))
-            {
-                for (int i = 0; i < list.Count; ++i)
-                    if (list[i].Tennv.IndexOf(nv.Tennv) >= 0)
-                    {
-                        kq.Add(new Nhanvien(list[i]));
-                    }
-            }
-
+        List<Nhanvien> INhanvienBLL.TimNhanVien(Nhanvien nv)
+        {
+            throw new NotImplementedException();
         }
     }
 }

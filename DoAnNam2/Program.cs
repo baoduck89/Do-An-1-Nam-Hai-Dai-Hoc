@@ -1,18 +1,33 @@
 ﻿using System;
-using DoAnNam2.Ultity;
+using DoAnNam2.Presenation;
 namespace DoAnNam2
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Menu()
         {
-            chucnang nv = new chucnang();
-            nv.menu();
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(" F1.Quan ly nhan vien: ");               
+                Console.WriteLine(" F5.Ket thuc ");
+                ConsoleKeyInfo kt = Console.ReadKey();
+                switch (kt.Key)
+                {
+                    case ConsoleKey.F1:
+                        frmNhanvien frm = new frmNhanvien();
+                        frm.Menu();
+                        break;
+                    case ConsoleKey.F5:
+                        Environment.Exit(0);
+                        break;
+                }
+            } while (true);
         }
 
-        internal static void Menu()
+        static void Main(string[] args)
         {
-            throw new NotImplementedException();
+            Menu();
         }
     }
 }

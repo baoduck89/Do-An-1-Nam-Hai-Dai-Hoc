@@ -4,13 +4,13 @@ using System.Text;
 using DoAnNam2.Entities;
 using System.IO;
 
-namespace DoAnNam2.Data
+namespace DoAnNam2.DataAccessLayer
 {   
-         class NhanVienDAL : INhanvienDAL
+         class NhanvienDAL : INhanvienDAL
         {
-            //Xác định đường dẫn của tệp dữ liệu SanPham.txt
+            
             private string txtfile = "Data/Nhanvien.txt";
-            //Lấy toàn bộ dữ liệu có trong file SanPham.txt đưa vào một danh sách 
+           
             public List<Nhanvien> GetAllNhanvien()
             {
                 List<Nhanvien> list = new List<Nhanvien>();
@@ -28,7 +28,7 @@ namespace DoAnNam2.Data
                 fread.Close();
                 return list;
             }
-            //Chèn một bản ghi học sinh vào tệp
+            
             public void ThemNhanvien(Nhanvien nv)
             {
                 string manv = "NV" + DateTime.Now.ToString("yyMMddhhmmss");
@@ -37,7 +37,7 @@ namespace DoAnNam2.Data
                 fwrite.WriteLine(nv.Manv + "#" + nv.Tennv + "#" + nv.Gioitinh + "#" + nv.Ngaysinh + "#" + nv.Ngayvaolv);
                 fwrite.Close();
             }
-            //Cập nhật lại danh sách vào tệp        
+                
             public void Update(List<Nhanvien> list)
             {
                 StreamWriter fwrite = File.CreateText(txtfile);

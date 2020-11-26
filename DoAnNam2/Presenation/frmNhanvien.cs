@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DoAnNam2.BussinessLayer;
-using DoAnNam2.Data;
+using DoAnNam2.DataAccessLayer;
 using DoAnNam2.Entities;
 
 namespace DoAnNam2.Presenation
@@ -71,12 +71,12 @@ namespace DoAnNam2.Presenation
                 do
                 {
                     Console.Clear();
-                    Console.WriteLine("QUAN LY THONG TIN SAN PHAM");
-                    Console.WriteLine(" F1.Nhap san pham ");
-                    Console.WriteLine(" F2.Sua san pham ");
-                    Console.WriteLine(" F3.Xoa san pham ");
+                    Console.WriteLine("QUAN LY THONG TIN NHAN VIEN");
+                    Console.WriteLine(" F1.Nhap nhan vien ");
+                    Console.WriteLine(" F2.Sua nhan vien ");
+                    Console.WriteLine(" F3.Xoa nhan vien");
                     Console.WriteLine(" F4.Hien danh sach ");
-                    Console.WriteLine(" F5.Kim kiem ");
+                    Console.WriteLine(" F5.Tim kiem ");
                     Console.WriteLine(" F6.Back ");
                     ConsoleKeyInfo kt = Console.ReadKey();
                     switch (kt.Key)
@@ -108,3 +108,4 @@ namespace DoAnNam2.Presenation
     }
 }
 
+        
