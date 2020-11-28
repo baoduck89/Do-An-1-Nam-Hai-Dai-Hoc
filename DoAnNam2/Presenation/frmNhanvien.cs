@@ -35,10 +35,10 @@ namespace DoAnNam2.Presenation
             public void Sua()
             {
                 Console.Clear();
-                Console.WriteLine("SỬA THÔNG TIN NHÂN VIÊN");
+                Console.WriteLine("SUA THONG TIN NHAN VIEN");
                 List<Nhanvien> list = nvDLL.GetAllNhanvien();
                 string Tensua;
-                Console.Write("Nhập TÊN NHÂN VIÊN Cần Sửa:");
+                Console.Write("NHAP TEN NHAN VIEN CAN SUA:");
                 Tensua = Console.ReadLine();
                 int i = 0;
                 for (i = 0; i < list.Count; ++i)
@@ -48,20 +48,20 @@ namespace DoAnNam2.Presenation
                         if (i < list.Count)
                         {
                             Nhanvien nv = new Nhanvien(list[i]);
-                            Console.Write("Nhập Tên  Mới :");
+                            Console.Write("Nhap ten moi :");
                             string ten = Console.ReadLine();
                             if (!string.IsNullOrEmpty(ten)) nv.Tennv = ten;
-                            Console.Write("Nhập Mã Nhân Viên Mới:");
+                            Console.Write("Nhap ma nhan vien moi:");
                             string ma = Console.ReadLine();
                             if (!string.IsNullOrEmpty(ten)) nv.Manv = ma;
-                            Console.Write("Nhập Ngày Sinh:");
+                            Console.Write("Nhap ngay sinh:");
                             DateTime ngay = DateTime.Parse(Console.ReadLine());
 
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Không tồn tại mã sản phẩm này");
+                        Console.WriteLine("khong ton tai ten nhan vien nay");
                     }
                 }
             }
@@ -104,6 +104,11 @@ namespace DoAnNam2.Presenation
                     }
                 } while (true);
             }
+        }
+
+        internal void Menu()
+        {
+            throw new NotImplementedException();
         }
     }
 }
