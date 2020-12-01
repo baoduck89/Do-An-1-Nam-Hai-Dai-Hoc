@@ -21,7 +21,7 @@ namespace DoAnNam2.DataAccessLayer
                     if (s != "")
                     {
                         string[] a = s.Split('#');
-                        list.Add(new Nhanvien(a[0], a[1], a[2], DateTime.Parse(a[3]), DateTime.Parse(a[4])));
+                        list.Add(new Nhanvien(a[0], a[1], a[2], DateTime.Parse(a[3]), double.Parse(a[4])));
                     }
                     s = fread.ReadLine();
                 }
@@ -34,7 +34,7 @@ namespace DoAnNam2.DataAccessLayer
                 string manv = "NV" + DateTime.Now.ToString("yyMMddhhmmss");
                 StreamWriter fwrite = File.AppendText(txtfile);
                 fwrite.WriteLine();
-                fwrite.WriteLine(nv.Manv + "#" + nv.Tennv + "#" + nv.Gioitinh + "#" + nv.Ngaysinh + "#" + nv.Ngayvaolv);
+                fwrite.WriteLine(nv.Manv + "#" + nv.Tennv + "#" + nv.Gioitinh + "#" + nv.Ngaysinh + "#" + nv.Luong);
                 fwrite.Close();
             }
                 
@@ -42,7 +42,7 @@ namespace DoAnNam2.DataAccessLayer
             {
                 StreamWriter fwrite = File.CreateText(txtfile);
                 for (int i = 0; i < list.Count; ++i)
-                    fwrite.WriteLine(list[i].Manv + "#" + list[i].Tennv + "#" + list[i].Gioitinh + "#" + list[i].Ngaysinh + "#" + list[i].Ngayvaolv);
+                    fwrite.WriteLine(list[i].Manv + "#" + list[i].Tennv + "#" + list[i].Gioitinh + "#" + list[i].Ngaysinh + "#" + list[i].Luong);
                 fwrite.Close();
             }
         }

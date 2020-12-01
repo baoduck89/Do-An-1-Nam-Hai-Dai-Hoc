@@ -4,7 +4,7 @@ namespace DoAnNam2
 {
     public class Program
     {
-        public static void Menu()
+        public static void Menu1()
         {
             do
             {
@@ -27,7 +27,7 @@ namespace DoAnNam2
 
         static void Main(string[] args)
         {
-            Menu();
+            Menu1();
         }
     }
 }

@@ -7,7 +7,7 @@ using DoAnNam2.DataAccessLayer;
 
 namespace DoAnNam2.BussinessLayer
 {
-    public class NhanvienBLL : INhanvienBLL
+    public class DonViDLL : IDonviBLL
     {
         private INhanvienDAL nvB = new NhanvienDAL();
         //Thực thi các yêu cầu
@@ -83,4 +83,3 @@ namespace DoAnNam2.BussinessLayer
         }
     }
 }
-       

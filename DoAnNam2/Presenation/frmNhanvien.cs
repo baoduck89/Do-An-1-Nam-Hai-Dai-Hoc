@@ -21,7 +21,7 @@ namespace DoAnNam2.Presenation
                 Console.Write("Nhap ten nhan vien:"); nv.Tennv = Console.ReadLine();
                 Console.Write("Nhap ngay sinh:"); nv.Ngaysinh = DateTime.Parse(Console.ReadLine());
                 Console.Write("Nhap gioi tinh:"); nv.Gioitinh = Console.ReadLine();
-                Console.Write("Nhap ngay vao lam viec:"); nv.Ngayvaolv = DateTime.Parse(Console.ReadLine());
+                Console.Write("Nhap luong:"); nv.Luong = double.Parse(Console.ReadLine());
                 nvDLL.ThemNhanVien(nv);
             }
             public void Hien()
@@ -30,7 +30,7 @@ namespace DoAnNam2.Presenation
                 Console.WriteLine("HIEN THI THONG TIN NHAN VIEN");
                 List<Nhanvien> list = nvDLL.GetAllNhanvien();
                 foreach (var nv in list)
-                    Console.WriteLine(nv.Manv + "\t" + nv.Tennv + "\t" + nv.Ngaysinh + "\t" + nv.Gioitinh + "\t" + nv.Ngayvaolv);
+                    Console.WriteLine(nv.Manv + "\t" + nv.Tennv + "\t" + nv.Ngaysinh + "\t" + nv.Gioitinh + "\t" + nv.Luong);
             }
             public void Sua()
             {
@@ -65,7 +65,19 @@ namespace DoAnNam2.Presenation
                     }
                 }
             }
-
+            public void Tim()
+            {
+                Console.Clear();
+                List<Nhanvien> list = Nhanvien.TimNhanVien(new Nhanvien());
+                string makhach;
+                Console.Write("Nhap ma nhan vien can tim:");
+                makhach = Console.ReadLine();
+                for (int i = 0; i < list.Count; ++i)
+                {
+                    if (makhach == list[i].Manv)
+                        Console.WriteLine(list[i].Manv + "\t" + list[i].Tennv + "\t" + list[i].Gioitinh + "\t" + list[i].Ngaysinh + "\t" + list[i].Luong);
+                }
+            }
             public void Menu()
             {
                 do
@@ -98,8 +110,9 @@ namespace DoAnNam2.Presenation
                             Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                             Console.ReadKey();
                             break;
+                        
                         case ConsoleKey.F6:
-                            Program.Menu();
+                            Program.Menu1();
                             break;
                     }
                 } while (true);
