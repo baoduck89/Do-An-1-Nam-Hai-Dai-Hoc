@@ -8,10 +8,18 @@ namespace DoAnNam2.Entities
     {
         string maDV;
         string tenDV;
+        private Donvi donvi;
+
         public Donvi()
         {
 
         }
+
+        public Donvi(Donvi donvi)
+        {
+            this.donvi = donvi;
+        }
+
         public Donvi(string maDV, string tenDV)
         {
             this.maDV = maDV;

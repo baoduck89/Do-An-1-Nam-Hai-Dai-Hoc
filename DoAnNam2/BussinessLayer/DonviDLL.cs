@@ -7,79 +7,80 @@ using DoAnNam2.DataAccessLayer;
 
 namespace DoAnNam2.BussinessLayer
 {
-    public class DonViDLL : IDonviBLL
+    public class DonviBLL: IDonviBLL
     {
-        private INhanvienDAL nvB = new NhanvienDAL();
+        private IDonviDAL dvd = new DonviDAL();
         //Thực thi các yêu cầu
-        public List<Nhanvien> GetAllNhanvien()
+        public List<Donvi> GetAllDonvi()
         {
-            return nvB.GetAllNhanvien();
+            return dvd.GetAllDonvi();
         }
-        public void ThemNhanVien(Nhanvien nv)
+        public void ThemDonvi(Donvi dv)
         {
-            if (!string.IsNullOrEmpty(nv.Tennv))
+            if (!string.IsNullOrEmpty(dv.TenDV))
             {
                 //Tiến hành chuẩn hóa dữ liệu nếu cần
-                nvB.ThemNhanvien(nv);
+                dvd.ThemDonvi(dv);
             }
             else
                 throw new Exception("Du lieu sai");
         }
 
-        public void XoaNhanVien(string manhanvien)
+        public void XoaDonvi(string maDonvi)
         {
             int i;
-            List<Nhanvien> list = GetAllNhanvien();
+            List<Donvi> list = GetAllDonvi();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].Manv == manhanvien) break;
+                if (list[i].MaDV == maDonvi) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                nvB.Update(list);
+                dvd.Update(list);
             }
             else
                 throw new Exception("Khong ton tai ma nay");
         }
-        public void SuaNhanVien(Nhanvien nv)
+        public void SuaDonvi(Donvi dv)
         {
             int i;
-            List<Nhanvien> list = GetAllNhanvien();
+            List<Donvi> list = GetAllDonvi();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].Manv == nv.Manv) break;
+                if (list[i].MaDV == dv.MaDV) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                list.Add(nv);
-                nvB.Update(list);
+                list.Add(dv);
+                dvd.Update(list);
             }
             else
                 throw new Exception("Khong ton tai hs nay");
         }
-        public List<Nhanvien> TimNhanVien(Nhanvien nv)
+        public List<Donvi> TimDonvi(Donvi dv)
         {
-            List<Nhanvien> list = GetAllNhanvien();
-            List<Nhanvien> kq = new List<Nhanvien>();
-            if (string.IsNullOrEmpty(nv.Manv) &&
-                string.IsNullOrEmpty(nv.Tennv))
+            List<Donvi> list = GetAllDonvi();
+            List<Donvi> kq = new List<Donvi>();
+            if (string.IsNullOrEmpty(dv.MaDV) &&
+                string.IsNullOrEmpty(dv.TenDV))
 
             {
                 kq = list;
             }
             //Tim theo ten nv
-            if (!string.IsNullOrEmpty(nv.Tennv))
+            if (!string.IsNullOrEmpty(dv.TenDV))
             {
                 for (int i = 0; i < list.Count; ++i)
-                    if (list[i].Tennv.IndexOf(nv.Tennv) >= 0)
+                    if (list[i].TenDV.IndexOf(dv.TenDV) >= 0)
                     {
-                        kq.Add(new Nhanvien(list[i]));
+                        kq.Add(new Donvi(list[i]));
                     }
             }
             return kq;
 
         }
-        public List<Nhanvien> GetAllNhanVien()
+        public List<Donvi> GetAllDonvi()
         {
             throw new NotImplementedException();
         }
     }
+
 }

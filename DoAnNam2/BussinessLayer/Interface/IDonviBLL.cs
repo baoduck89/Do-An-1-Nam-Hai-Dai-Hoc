@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using DoAnNam2.Entities;
 
-namespace DoAnNam2.BussinessLayer.Interface
+namespace DoAnNam2.BussinessLayer
 {
     public interface IDonviBLL
     {

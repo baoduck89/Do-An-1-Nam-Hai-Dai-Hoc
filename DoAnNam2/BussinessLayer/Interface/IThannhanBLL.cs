@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DoAnNam2.BussinessLayer.Interface
+namespace DoAnNam2.BussinessLayer
 {
     public interface IThannhanBLL
     {
