@@ -13,4 +13,8 @@
     <None Include="Presenation\frmThanNhan.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

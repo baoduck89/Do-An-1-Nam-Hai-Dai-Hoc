@@ -4,12 +4,14 @@ namespace DoAnNam2
 {
     public class Program
     {
-        public static void Menu1()
+        public static void Menu()
         {
             do
             {
                 Console.Clear();
-                Console.WriteLine(" F1.Quan ly nhan vien: ");               
+                Console.WriteLine(" F1.Quan ly nhan vien: ");
+                Console.WriteLine("F2.Quan ly don vi:");
+                Console.WriteLine("F3.Quan ly than nhan:");
                 Console.WriteLine(" F5.Ket thuc ");
                 ConsoleKeyInfo kt = Console.ReadKey();
                 switch (kt.Key)
@@ -27,7 +29,7 @@ namespace DoAnNam2
 
         static void Main(string[] args)
         {
-            Menu1();
+            Menu();
         }
     }
 }

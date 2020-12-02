@@ -65,6 +65,29 @@ namespace DoAnNam2.Presenation
                     }
                 }
             }
+            public void Xoa()
+            {
+                Console.Clear();
+                Console.WriteLine("Xoa thong tin nhan vien");
+                List<Nhanvien> list = nvDLL.GetAllNhanvien();
+                string Maxoa;
+                Console.Write("Nhap ma nhan vien can xoa:");
+                Maxoa = Console.ReadLine();
+                int i;
+                for (i = 0; i < list.Count; ++i)
+                    if (list[i].Manv == Maxoa) break;
+                if (i < list.Count)
+                {
+                    Console.Write("Xoa thanh cong.....");
+                    nvDLL.XoaNhanVien(Maxoa);
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.Write("Khong ton tai ma nhan vien nay!");
+                    Console.ReadKey();
+                }
+            }
             public void Tim()
             {
                 Console.Clear();
@@ -99,18 +122,28 @@ namespace DoAnNam2.Presenation
                             Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                             Console.ReadKey();
                             break;
-                        case ConsoleKey.F4:
-                            Hien();
-                            Console.WriteLine("Nhap phim bat ky de tiep tuc...");
-                            Console.ReadKey();
-                            break;
                         case ConsoleKey.F2:
                             Sua();
                             Hien();
                             Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                             Console.ReadKey();
                             break;
-                        
+                        case ConsoleKey.F3:
+                            Xoa();
+                            Hien();
+                            Console.WriteLine("Nhan phim bat ki de tiep tuc");
+                            Console.ReadKey();
+                            break;
+                        case ConsoleKey.F4:
+                            Hien();
+                            Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                            Console.ReadKey();
+                            break;
+                        case ConsoleKey.F5:
+                            Tim();
+                            Console.WriteLine("Nhan phim bat ki de tiep tuc");
+                            Console.ReadKey();
+                            break;
                         case ConsoleKey.F6:
                             Program.Menu1();
                             break;

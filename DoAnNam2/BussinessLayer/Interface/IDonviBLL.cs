@@ -9,7 +9,7 @@ namespace DoAnNam2.BussinessLayer
     {
         List<Donvi> GetAllDonvi();
         void ThemDonVi(Donvi dv);
-        void XoaDonVi(string maDV);
+        void XoaDonVi(string madonvi);
         void SuaDonVi(Donvi dv);
         List<Donvi> TimDonVi(Donvi dv);
         List<Donvi> GetAllDonvi();

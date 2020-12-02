@@ -26,12 +26,12 @@ namespace DoAnNam2.BussinessLayer
                 throw new Exception("Du lieu sai");
         }
 
-        public void XoaDonvi(string maDonvi)
+        public void XoaDonvi(string madonvi)
         {
             int i;
             List<Donvi> list = GetAllDonvi();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].MaDV == maDonvi) break;
+                if (list[i].MaDV == madonvi) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
