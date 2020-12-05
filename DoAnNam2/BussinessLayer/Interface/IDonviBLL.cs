@@ -7,11 +7,11 @@ namespace DoAnNam2.BussinessLayer
 {
     public interface IDonviBLL
     {
-        List<Donvi> GetAllDonvi();
-        void ThemDonVi(Donvi dv);
-        void XoaDonVi(string madonvi);
+        List<Donvi> GetAllDonvi();       
         void SuaDonVi(Donvi dv);
         List<Donvi> TimDonVi(Donvi dv);
         List<Donvi> GetAllDonvi();
+        void ThemDonvi(Donvi dv);
+        void XoaDonvi(string maxoa);
     }
 }

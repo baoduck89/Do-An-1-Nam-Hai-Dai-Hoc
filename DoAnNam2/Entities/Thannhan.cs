@@ -9,10 +9,18 @@ namespace DoAnNam2.Entities
         string manv;
         string tenTN, gioitinh;
         DateTime ngaysinh;
+        private Thannhan thannhan;
+
         public Thannhan()
         {
 
         }
+
+        public Thannhan(Thannhan thannhan)
+        {
+            this.thannhan = thannhan;
+        }
+
         public Thannhan(string manv,string tenTN,  string gioitinh,DateTime ngaysinh)
         {
             this.manv = manv;
@@ -20,7 +28,7 @@ namespace DoAnNam2.Entities
             this.gioitinh = gioitinh;
             this.ngaysinh = ngaysinh;
         }
-        public string maNV { get => manv;set=>manv=value }
+        public string maNV { get => manv; set => manv = value; }
         public string TenTN { get => tenTN; set => tenTN = value; }
         public string Gioitinh { get => gioitinh; set => gioitinh = value; }
         public DateTime Ngaysinh { get => ngaysinh; set => ngaysinh = value; }

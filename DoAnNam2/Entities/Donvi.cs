@@ -27,7 +27,11 @@ namespace DoAnNam2.Entities
         }
         public string MaDV { get => maDV; set => maDV = value; }
         public string TenDV { get => tenDV; set => tenDV = value; }
-        
+
+        internal static List<Donvi> TimDonvi(Donvi donvi)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
     

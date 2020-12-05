@@ -5,6 +5,7 @@ using DoAnNam2.BussinessLayer;
 using DoAnNam2.DataAccessLayer;
 using DoAnNam2.Entities;
 
+
 namespace DoAnNam2.Presenation
 {
     class frmNhanvien
@@ -145,7 +146,7 @@ namespace DoAnNam2.Presenation
                             Console.ReadKey();
                             break;
                         case ConsoleKey.F6:
-                            Program.Menu1();
+                            Program.Menu();
                             break;
                     }
                 } while (true);
