@@ -6,7 +6,7 @@ namespace DoAnNam2.Entities
 {
      public class Thannhan
     {
-        string manv;
+        string matn;
         string tenTN, gioitinh;
         DateTime ngaysinh;
         private Thannhan thannhan;
@@ -23,12 +23,12 @@ namespace DoAnNam2.Entities
 
         public Thannhan(string manv,string tenTN,  string gioitinh,DateTime ngaysinh)
         {
-            this.manv = manv;
+            this.matn = manv;
             this.tenTN = tenTN;
             this.gioitinh = gioitinh;
             this.ngaysinh = ngaysinh;
         }
-        public string maNV { get => manv; set => manv = value; }
+        public string maTN { get => matn; set => matn = value; }
         public string TenTN { get => tenTN; set => tenTN = value; }
         public string Gioitinh { get => gioitinh; set => gioitinh = value; }
         public DateTime Ngaysinh { get => ngaysinh; set => ngaysinh = value; }

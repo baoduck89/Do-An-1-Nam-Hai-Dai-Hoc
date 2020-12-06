@@ -19,7 +19,7 @@ namespace DoAnNam2.Presenation
                 Console.WriteLine("NHAP THONG TIN NHAN VIEN");
                 Donvi dv = new Donvi();
                 Console.Write("Nhap ma don vi:"); dv.MaDV = Console.ReadLine();
-                Console.Write("Nhap ten nhan vien:"); dv.TenDV = Console.ReadLine();               
+                Console.Write("Nhap ten nhan vien:"); dv.TenDV = Console.ReadLine();
                 DV.ThemDonvi(dv);
             }
             public void Hien()
@@ -28,7 +28,7 @@ namespace DoAnNam2.Presenation
                 Console.WriteLine("HIEN THI THONG TIN NHAN VIEN");
                 List<Donvi> list = DV.GetAllDonvi();
                 foreach (var dv in list)
-                    Console.WriteLine(dv.MaDV + "\t" + dv.TenDV );
+                    Console.WriteLine(dv.MaDV + "\t" + dv.TenDV);
             }
             public void Sua()
             {
@@ -51,7 +51,7 @@ namespace DoAnNam2.Presenation
                             if (!string.IsNullOrEmpty(ten)) dv.TenDV = ten;
                             Console.Write("Nhap ma  moi:");
                             string ma = Console.ReadLine();
-                            if (!string.IsNullOrEmpty(ten)) dv.TenDV = ma;                            
+                            if (!string.IsNullOrEmpty(ten)) dv.TenDV = ma;
                         }
                     }
                     else
@@ -64,7 +64,7 @@ namespace DoAnNam2.Presenation
             {
                 Console.Clear();
                 Console.WriteLine("Xoa thong tin don vi");
-                List<Donvi> list =DV.GetAllDonvi();
+                List<Donvi> list = DV.GetAllDonvi();
                 string Maxoa;
                 Console.Write("Nhap ma don vi can xoa:");
                 Maxoa = Console.ReadLine();
@@ -93,10 +93,10 @@ namespace DoAnNam2.Presenation
                 for (int i = 0; i < list.Count; ++i)
                 {
                     if (makhach == list[i].MaDV)
-                        Console.WriteLine(list[i].MaDV + "\t" + list[i].TenDV );
+                        Console.WriteLine(list[i].MaDV + "\t" + list[i].TenDV);
                 }
             }
-            public void Menu()
+            public void Menu1()
             {
                 do
                 {
@@ -147,7 +147,12 @@ namespace DoAnNam2.Presenation
             }
         }
 
-        internal void Menu()
+        internal void Menu2()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Menu1()
         {
             throw new NotImplementedException();
         }

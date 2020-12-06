@@ -8,9 +8,9 @@ using DoAnNam2.Entities;
 
 namespace DoAnNam2.Presenation
 {
-    class frmThannhan
+    class frmThanNhan
     {
-        public class FrmThannhan
+        public class frmThannhan
         {
             private IThannhanBLL TN = new ThannhanBLL();
             public void Nhap()
@@ -18,10 +18,10 @@ namespace DoAnNam2.Presenation
                 Console.Clear();
                 Console.WriteLine("NHAP THONG TIN THAN NHAN");
                 Thannhan tn = new Thannhan();
-                Console.Write("Nhap ma nhan vien:"); tn.manv = Console.ReadLine();
+                Console.Write("Nhap ma than nhan:"); tn.manv = Console.ReadLine();
                 Console.Write("Nhap ten than nhan:"); tn.ten = Console.ReadLine();
                 Console.Write("Nhap ngay sinh:"); tn.ngaysinh = DateTime.Parse(Console.ReadLine());
-                Console.Write("Nhap gioi tinh:"); tn.gioitinh = Console.ReadLine();               
+                Console.Write("Nhap gioi tinh:"); tn.gioitinh = Console.ReadLine();
                 TN.ThemThannhan(tn);
             }
             public void Hien()
@@ -101,7 +101,7 @@ namespace DoAnNam2.Presenation
                         Console.WriteLine(list[i].Matn + "\t" + list[i].Tentn + "\t" + list[i].Gioitinh + "\t" + list[i].Ngaysinh);
                 }
             }
-            public void Menu()
+            public void Menu2()
             {
                 do
                 {
@@ -151,11 +151,8 @@ namespace DoAnNam2.Presenation
                 } while (true);
             }
         }
-
-        internal void Menu()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
+
+
 

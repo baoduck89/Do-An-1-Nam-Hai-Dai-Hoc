@@ -31,7 +31,7 @@ namespace DoAnNam2.BussinessLayer
             int i;
             List<Thannhan> list = GetAllThannhan();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].maNV == maThannhan) break;
+                if (list[i].maTN == maThannhan) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
@@ -45,7 +45,7 @@ namespace DoAnNam2.BussinessLayer
             int i;
             List<Thannhan> list = GetAllThannhan();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].maNV == tn.maNV) break;
+                if (list[i].maTN == tn.maTN) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
@@ -78,6 +78,11 @@ namespace DoAnNam2.BussinessLayer
 
         }
         public List<Thannhan> GetAllThannhan()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SuaThannhanh(Thannhan tn)
         {
             throw new NotImplementedException();
         }

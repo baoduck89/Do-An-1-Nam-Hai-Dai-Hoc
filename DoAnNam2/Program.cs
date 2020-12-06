@@ -21,6 +21,14 @@ namespace DoAnNam2
                         frmNhanvien frm = new frmNhanvien();
                         frm.Menu();
                         break;
+                    case ConsoleKey.F2:
+                        frmDonvi fra = new frmDonvi();
+                        fra.Menu1();
+                        break;
+                    case ConsoleKey.F3:
+                        frmDonvi frq = new frmDonvi();
+                        frq.Menu2();
+                        break;
                     case ConsoleKey.F5:
                         Environment.Exit(0);
                         break;
