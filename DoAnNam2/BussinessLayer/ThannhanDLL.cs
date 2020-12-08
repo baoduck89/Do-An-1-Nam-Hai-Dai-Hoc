@@ -59,7 +59,7 @@ namespace DoAnNam2.BussinessLayer
         {
             List<Thannhan> list = GetAllThannhan();
             List<Thannhan> kq = new List<Thannhan>();
-            if (string.IsNullOrEmpty(tn.maNV) &&
+            if (string.IsNullOrEmpty(tn.maTN) &&
                 string.IsNullOrEmpty(tn.TenTN))
 
             {
@@ -76,11 +76,7 @@ namespace DoAnNam2.BussinessLayer
             }
             return kq;
 
-        }
-        public List<Thannhan> GetAllThannhan()
-        {
-            throw new NotImplementedException();
-        }
+        }      
 
         public void SuaThannhanh(Thannhan tn)
         {

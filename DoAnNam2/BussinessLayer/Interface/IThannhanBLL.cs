@@ -11,8 +11,7 @@ namespace DoAnNam2.BussinessLayer
         void ThemThannhan(Thannhan tn);
         void XoaThannhan(string maTN);
         void SuaThannhanh(Thannhan tn);
-        List<Thannhan> TimThannhan(Thannhan nv);
-        
+        List<Thannhan> TimThannhan(Thannhan nv);       
     }
 }
 

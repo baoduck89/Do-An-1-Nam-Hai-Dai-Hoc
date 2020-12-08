@@ -25,7 +25,7 @@ namespace DoAnNam2.Presenation
                 Console.SetCursorPosition(27, 10); Console.Write("Nhap ten nhan vien:"); nv.Tennv = Console.ReadLine();
                 Console.SetCursorPosition(27, 12); Console.Write("Nhap ngay sinh:"); nv.Ngaysinh = DateTime.Parse(Console.ReadLine());
                 Console.SetCursorPosition(27, 12); Console.Write("Nhap gioi tinh:"); nv.Gioitinh = Console.ReadLine();
-                Console.SetCursorPosition(27, 14); Console.Write("Nhap  he so luong:"); nv.HSL = double.Parse(Console.ReadLine());
+                Console.SetCursorPosition(27, 14); Console.Write("Nhap  so ngay lam viec:"); nv.SNLV = double.Parse(Console.ReadLine());
                 nvDLL.ThemNhanVien(nv);
             }
             public void Hien()
@@ -39,7 +39,7 @@ namespace DoAnNam2.Presenation
                 Console.SetCursorPosition(9, 8); Console.WriteLine("| Ma nhan vien|    Ten nhan vien     |    Gioi tinh    |     Ngay sinh      |   He so luong|  Tien luong |");
                 Console.SetCursorPosition(9, 9); Console.WriteLine("|-------------|----------------------|-----------------|--------------------|--------------|-------------|");
                 foreach (var nv in list)
-                    Console.WriteLine("\t |" + nv.Manv + "\t |   " + nv.Tennv + "\t |           |  " + nv.HSL + "\t |  " + nv.Tinhluong + "\t | ");
+                    Console.WriteLine("\t |" + nv.Manv + "\t |   " + nv.Tennv + "\t |           |  " + nv.SNLV + "\t |  " + nv.Tinhluong + "\t | ");
                 Console.Write("          Nhan phim bat ki de tiep tuc...");
             }
             public void Sua()
@@ -126,7 +126,7 @@ namespace DoAnNam2.Presenation
                     Console.SetCursorPosition(9, 10); Console.WriteLine("-------------------------------------------------------------------------------------------------------");
                     Console.SetCursorPosition(9, 11); Console.WriteLine("║ Ma nhan vien |    Ten nhan vien      |    Gioi tinh   |      Ngay sinh   |    He so luong   |  Tien luong|");
                     Console.SetCursorPosition(9, 12); Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
-                    Console.SetCursorPosition(9, 13); Console.WriteLine("| " + list[i].Manv + "\t |   " + list[i].Tennv + "|  \t" + list[i].HSL + "\t |  " + list[i].Tinhluong + "\t | ");
+                    Console.SetCursorPosition(9, 13); Console.WriteLine("| " + list[i].Manv + "\t |   " + list[i].Tennv + "|  \t" + list[i].SNLV + "\t |  " + list[i].Tinhluong + "\t | ");
                     Console.SetCursorPosition(9, 14); Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                     Console.SetCursorPosition(9, 15); Console.Write(" Nhap phim bat ki de tiep tuc");
                     Console.ReadKey();

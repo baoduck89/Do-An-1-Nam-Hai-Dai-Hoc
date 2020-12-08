@@ -76,8 +76,14 @@ namespace DoAnNam2.BussinessLayer
             }
             return kq;
 
+        }       
+
+        public void SuaDonVi(Donvi dv)
+        {
+            throw new NotImplementedException();
         }
-        public List<Donvi> GetAllDonvi()
+
+        public List<Donvi> TimDonVi(Donvi dv)
         {
             throw new NotImplementedException();
         }
