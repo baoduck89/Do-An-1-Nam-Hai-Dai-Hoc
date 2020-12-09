@@ -194,12 +194,7 @@ namespace DoAnNam2.Presenation
                     }
                 } while (true);
             }
-        }
-
-        internal void Menunv()
-        {
-            throw new NotImplementedException();
-        }
+        }  
     }
 }
         
