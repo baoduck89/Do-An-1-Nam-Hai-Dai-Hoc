@@ -34,7 +34,7 @@ namespace DoAnNam2.DataAccessLayer
                 string manv = "NV" + DateTime.Now.ToString("yyMMddhhmmss");
                 StreamWriter fwrite = File.AppendText(txtfile);
                 fwrite.WriteLine();
-                fwrite.WriteLine(nv.Manv + "#" + nv.Tennv + "#" + nv.Gioitinh + "#" + nv.Ngaysinh + "#" + nv.Luong);
+                fwrite.WriteLine(nv.Manv + "#" + nv.Tennv + "#" + nv.Gioitinh + "#" + nv.Ngaysinh + "#" + nv.SNLV);
                 fwrite.Close();
             }
                 
@@ -42,7 +42,7 @@ namespace DoAnNam2.DataAccessLayer
             {
                 StreamWriter fwrite = File.CreateText(txtfile);
                 for (int i = 0; i < list.Count; ++i)
-                    fwrite.WriteLine(list[i].Manv + "#" + list[i].Tennv + "#" + list[i].Gioitinh + "#" + list[i].Ngaysinh + "#" + list[i].Luong);
+                    fwrite.WriteLine(list[i].Manv + "#" + list[i].Tennv + "#" + list[i].Gioitinh + "#" + list[i].Ngaysinh + "#" + list[i].SNLV);
                 fwrite.Close();
             }
         }

@@ -26,7 +26,7 @@ namespace DoAnNam2
                         fra.Menu1();
                         break;
                     case ConsoleKey.F3:
-                        frmDonvi frq = new frmDonvi();
+                        frm frq = new frmDonvi();
                         frq.Menu2();
                         break;
                     case ConsoleKey.F5:
