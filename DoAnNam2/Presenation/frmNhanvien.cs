@@ -78,6 +78,7 @@ namespace DoAnNam2.Presenation
                     else
                     {
                         Console.SetCursorPosition(27, 17); Console.WriteLine("khong ton tai ten nhan vien nay");
+                        break;
                     }
                 }
             }
@@ -190,11 +191,12 @@ namespace DoAnNam2.Presenation
                             Tim();
                             Hien();
                             Console.ReadKey();
-                            break;                       
+                            break;
                     }
                 } while (true);
             }
-        }  
-    }
+        }
+
+    }    
 }
         

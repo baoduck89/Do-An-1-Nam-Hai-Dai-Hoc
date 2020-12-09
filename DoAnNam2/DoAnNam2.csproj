@@ -13,8 +13,4 @@
     <None Include="Presenation\frmThanNhan.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Utility\" />
-  </ItemGroup>
-
 </Project>

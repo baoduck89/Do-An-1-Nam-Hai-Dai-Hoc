@@ -53,7 +53,7 @@ namespace DoAnNam2.BussinessLayer
                 tnn.Update(list);
             }
             else
-                throw new Exception("Khong ton tai hs nay");
+                throw new Exception("Khong ton tai tn nay");
         }
         public List<Thannhan> TimThannhan(Thannhan tn)
         {

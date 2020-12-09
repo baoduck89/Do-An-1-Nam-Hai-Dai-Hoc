@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DoAnNam2.BussinessLayer;
+using DoAnNam2.BussinessLayer.Interface;
 using DoAnNam2.DataAccessLayer;
 using DoAnNam2.Entities;
 
@@ -12,7 +12,7 @@ namespace DoAnNam2.Presenation
     {
         public class FrmThannhan
         {
-            private IThannhan TN = new ThannhanBLL();
+            public IThannhanBLL TN = new ThannhanBLL();
             public void Nhap()
             {
                 Console.Clear();

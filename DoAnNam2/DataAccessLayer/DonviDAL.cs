@@ -30,8 +30,7 @@ namespace DoAnNam2.DataAccessLayer
         }
 
         public void ThemDonvi(Donvi dv)
-        {
-            string maDV = "DV" + DateTime.Now.ToString("yyMMddhhmmss");
+        {           
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
             fwrite.WriteLine(dv.MaDV + "#" + dv.TenDV );

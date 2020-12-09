@@ -30,8 +30,7 @@ namespace DoAnNam2.DataAccessLayer
             }
             
             public void ThemNhanvien(Nhanvien nv)
-            {
-                string manv = "NV" + DateTime.Now.ToString("yyMMddhhmmss");
+            {               
                 StreamWriter fwrite = File.AppendText(txtfile);
                 fwrite.WriteLine();
                 fwrite.WriteLine(nv.Manv + "#" + nv.Tennv + "#" + nv.Gioitinh + "#" + nv.Ngaysinh + "#" + nv.SNLV);
