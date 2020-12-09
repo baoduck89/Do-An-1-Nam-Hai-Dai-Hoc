@@ -10,26 +10,34 @@ namespace DoAnNam2
             do
             {
                 Console.Clear();
-                Console.WriteLine(" F1.Quan ly nhan vien: ");
-                Console.WriteLine("F2.Quan ly don vi:");
-                Console.WriteLine("F3.Quan ly than nhan:");
-                Console.WriteLine(" F5.Ket thuc ");
+                Console.SetCursorPosition(20, 5); Console.Write("-----------------------------------------------------------------------------");
+                Console.SetCursorPosition(20, 6); Console.Write("|                              Quan Li Nhan Su                              |");                
+                Console.SetCursorPosition(20, 9); Console.Write("|---------------------------------------------------------------------------|");
+                Console.SetCursorPosition(20, 10); Console.Write("|     1    |                    Quan Li Nhan vien                          |");
+                Console.SetCursorPosition(20, 11); Console.Write("|----------|-------------------------------------------------------------- |");
+                Console.SetCursorPosition(20, 12); Console.Write("|     2    |                   Quan Li Don vi                              |");
+                Console.SetCursorPosition(20, 13); Console.Write("|----------|---------------------------------------------------------------|");
+                Console.SetCursorPosition(20, 14); Console.Write("|     3    |                  Quan Li Than Nhan                            |");
+                Console.SetCursorPosition(20, 15); Console.Write("|----------|---------------------------------------------------------------|");
+                Console.SetCursorPosition(20, 16); Console.Write("|     4    |                         Ket Thuc                              |");
+                Console.SetCursorPosition(20, 9); Console.Write("|---------------------------------------------------------------------------|");
                 ConsoleKeyInfo kt = Console.ReadKey();
-                switch (kt.Key)
+                switch (kt.KeyChar)
                 {
-                    case ConsoleKey.F1:
+                    case '1':
                         frmNhanvien frm = new frmNhanvien();
-                        frm.Menu();
+                        frm.Menunv();
+                        Console.ReadKey();
                         break;
-                    case ConsoleKey.F2:
-                        frmDonvi fra = new frmDonvi();
-                        fra.Menu1();
+                    case '2':
+                        frmDonvi frd = new frmDonvi();
+                        frd.Menudv();
+                        Console.ReadKey();
                         break;
-                    case ConsoleKey.F3:
-                        frm frq = new frmDonvi();
-                        frq.Menu2();
-                        break;
-                    case ConsoleKey.F5:
+                    case '3':
+                        
+                        break;                                           
+                    case '4':
                         Environment.Exit(0);
                         break;
                 }

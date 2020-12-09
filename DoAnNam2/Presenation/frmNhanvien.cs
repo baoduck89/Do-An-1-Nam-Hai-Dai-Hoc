@@ -190,11 +190,16 @@ namespace DoAnNam2.Presenation
                             Tim();
                             Hien();
                             Console.ReadKey();
-                            break;                        
+                            break;                       
                     }
                 } while (true);
             }
-        }        
+        }
+
+        internal void Menunv()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
         

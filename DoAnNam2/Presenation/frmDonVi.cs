@@ -129,7 +129,7 @@ namespace DoAnNam2.Presenation
                     Console.ReadKey();
                 }
             }
-            public void Menunv()
+            public void Menudv()
             {
                 do
                 {
@@ -184,6 +184,11 @@ namespace DoAnNam2.Presenation
                     }
                 } while (true);
             }
+        }
+
+        internal void Menudv()
+        {
+            throw new NotImplementedException();
         }
     }
 }
