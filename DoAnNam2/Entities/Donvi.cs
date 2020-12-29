@@ -8,34 +8,45 @@ namespace DoAnNam2.Entities
     {
         string maDV;
         string tenDV;
-        private Donvi donvi;
 
-        public Donvi()
-        {
-
-        }
-
-        public Donvi(Donvi donvi)
-        {
-            this.donvi = donvi;
-        }
 
         public Donvi(string maDV, string tenDV)
         {
             this.maDV = maDV;
             this.tenDV = tenDV;
         }
-        public string MaDV { get => maDV; set => maDV = value; }
-        public string TenDV { get => tenDV; set => tenDV = value; }
-
-        internal static List<Donvi> TimDonvi(Donvi donvi)
+        public Donvi(Donvi dv)
         {
-            throw new NotImplementedException();
+
         }
+
+        public Donvi()
+        {
+        }
+
+        public string MaDV
+        {
+            get { return maDV; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value.Length <= 4)
+                    maDV = value;
+            }
+        }
+        public string TenDV
+        {
+            get { return tenDV; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    tenDV = value;
+            }
+        }
+
+
     }
 }
-    
-    
-    
 
-    
+
+
+

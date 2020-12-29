@@ -4,35 +4,53 @@ using System.Text;
 
 namespace DoAnNam2.Entities
 {
-     public class Thannhan
+    public class Thannhan
     {
         string matn;
         string tenTN, gioitinh;
-        DateTime ngaysinh;
-        private Thannhan thannhan;
 
         public Thannhan()
         {
+        }
+
+        public Thannhan(Thannhan tn)
+        {
 
         }
 
-        public Thannhan(Thannhan thannhan)
+        public Thannhan(string matn, string tenTN, string gioitinh)
         {
-            this.thannhan = thannhan;
-        }
-
-        public Thannhan(string manv,string tenTN,  string gioitinh,DateTime ngaysinh)
-        {
-            this.matn = manv;
+            this.matn = matn;
             this.tenTN = tenTN;
             this.gioitinh = gioitinh;
-            this.ngaysinh = ngaysinh;
-        }
-        public string maTN { get => matn; set => matn = value; }
-        public string TenTN { get => tenTN; set => tenTN = value; }
-        public string Gioitinh { get => gioitinh; set => gioitinh = value; }
-        public DateTime Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
-        
 
+        }
+        public string TenTN
+        {
+            get { return tenTN; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    tenTN = value;
+            }
+        }
+        public string Gioitinh
+        {
+            get { return gioitinh; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    gioitinh = value;
+            }
+        }
+        public string maTN
+        {
+            get { return matn; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value.Length <= 4)
+                    matn = value;
+            }
+        }
     }
 }

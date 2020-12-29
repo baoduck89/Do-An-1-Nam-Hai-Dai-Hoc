@@ -9,34 +9,62 @@ namespace DoAnNam2.Entities
     {
         private string manv;
         private string tennv, gioitinh;
-        private DateTime ngaysinh;
-        private double snlv;
-        private double hsl=500000;
-        private Nhanvien nhanvien;
+        private string sodienthoai;
+        private int snlv;
+        private double hsl;
+        private double tinhluong;
+
 
         public Nhanvien()
         {
         }
 
-        public Nhanvien(Nhanvien nhanvien)
-        {
-            this.nhanvien = nhanvien;
-        }
 
-        public Nhanvien(string manv, string tennv, string gioitinh, DateTime ngaysinh, double snlv)
+        public string Manv
         {
-            this.manv = Manv;
-            this.tennv = Tennv;
-            this.gioitinh = Gioitinh;
-            this.ngaysinh = Ngaysinh;           
-            this.snlv = SNLV;
+            get { return manv; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value.Length <= 4)
+                    manv = value;
+            }
         }
-
-        public string Manv { get => manv; set => manv = value; }
-        public string Tennv { get => tennv; set => tennv = value; }
-        public string Gioitinh { get => gioitinh; set => gioitinh = value; }
-        public DateTime Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
-        public double SNLV { get => SNLV; set => SNLV = value; }
+        public string Tennv
+        {
+            get { return tennv; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    tennv = value;
+            }
+        }
+        public string Gioitinh
+        {
+            get { return gioitinh; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    gioitinh = value;
+            }
+        }
+        public string SDT
+        {
+            get { return sodienthoai; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value.Length == 10)
+                    sodienthoai = value;
+            }
+        }
+        public int SNLV
+        {
+            get { return snlv; }
+            set
+            {
+                if (value > 0 && value <= 31)
+                    snlv = value;
+            }
+        }
         public double HSL
         {
             get { return hsl; }
@@ -48,12 +76,30 @@ namespace DoAnNam2.Entities
         }
         public double Tinhluong
         {
-            get { return SNLV * HSL; }
+            get { return SNLV * hsl; }
+        }
+        public Nhanvien(Nhanvien nv)
+        {
+            this.Manv = nv.Manv;
+            this.tennv = nv.Tennv;
+            this.gioitinh = nv.Gioitinh;
+            this.SDT = nv.SDT;
+            this.snlv = nv.SNLV;
+            this.hsl = nv.hsl;
+            this.tinhluong = nv.tinhluong;
         }
 
-        internal static List<Nhanvien> TimNhanVien(Nhanvien nhanvien)
+
+        public Nhanvien(string Manv, string Tennv, string Gioitinh, string SDT, int SNLV, double hsl, double tinhluong)
         {
-            throw new NotImplementedException();
+            this.Manv = Manv;
+            this.Tennv = Tennv;
+            this.Gioitinh = Gioitinh;
+            this.SDT = SDT;
+            this.SNLV = SNLV;
+            this.hsl = hsl;
+            this.tinhluong = tinhluong;
         }
+
     }
 }
